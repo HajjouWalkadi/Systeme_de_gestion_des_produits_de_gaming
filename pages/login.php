@@ -19,7 +19,7 @@
 <body class="bgimage">
   
   <h1>Log In</h1>
-<form class="w-25 m-auto py-5">
+<form class="w-25 m-auto p-5">
   <!-- Email input -->
   <div class="form-outline mb-4">
     <input type="email" id="form2Example1" class="form-control" />
@@ -36,9 +36,8 @@
   <div class="row mb-4">
     <div class="col d-flex justify-content-center">
       <!-- Checkbox -->
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-        <label class="form-check-label" for="form2Example31"> Remember me </label>
+
+        <!-- <label class="form-check-label" for="form2Example31"> Remember me </label> -->
       </div>
     </div>
 
@@ -49,7 +48,7 @@
   </div>
 
   <!-- Submit button -->
-  <button type="button" class="btn btn-primary btn-block mb-4 text-center col-4 offset-4">Sign in</button>
+  <button type="button" class="btn btn-primary btn-block mb-4 text-center col-4 offset-4">Log in</button>
 
   <!-- Register buttons -->
   <div class="text-center">

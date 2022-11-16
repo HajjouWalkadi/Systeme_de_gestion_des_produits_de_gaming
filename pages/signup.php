@@ -1,3 +1,7 @@
+<?php 
+include '../functions/script.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,38 +19,41 @@
     
     <title>SignUp</title>
 </head>
-<body class="bgimage">
-  <h1>Create An Account</h1>
-<form class="w-25 m-auto py-5">
+<body class="bgimage row m-0">
+  
+<form class="col-lg-4 col-md-5 col-11 m-auto p-2 px-4 signupform" action="../functions/script.php" method="post">
   <!-- Email input -->
+  <h1 class="text-center mt-2">Create An Account</h1>
+<?php if(isset($_SESSION['existingEmail'])){?>
+  <div class="alert alert-warning" role="alert">
+  <?php echo $_SESSION['existingEmail'];
+  unset($_SESSION['existingEmail']);
+  ?>
+</div>
+<?php }?>
+
   <div class="form-outline mb-4">
-    <input type="text" id="form2Example1" class="form-control" />
+    <input type="text" id="userName" name="userName" class="form-control" />
     <label class="form-label" for="form2Example1">Username</label>
   </div>
   <div class="form-outline mb-4">
-    <input type="email" id="form2Example2" class="form-control" />
+    <input type="email" id="email" name="email" class="form-control" />
     <label class="form-label" for="form2Example2">Email address</label>
   </div>
 
   <!-- Password input -->
   <div class="form-outline mb-4">
-    <input type="password" id="form2Example3" class="form-control" />
+    <input type="password" id="password" name="password" class="form-control" />
     <label class="form-label" for="form2Example3">Password</label>
   </div>
   <div class="form-outline mb-4">
-    <input type="password" id="form2Example4" class="form-control" />
+    <input type="password" id="passwordCheck" name="passwordCheck" class="form-control" />
     <label class="form-label" for="form2Example4">Confirm Password</label>
   </div>
   
   <!-- 2 column grid layout for inline styling -->
   <div class="row mb-4">
     <div class="col d-flex justify-content-center">
-      <!-- Checkbox -->
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-        <label class="form-check-label" for="form2Example31"> Remember me </label>
-      </div>
-    </div>
 
     <div class="col">
       <!-- Simple link -->
@@ -55,13 +62,11 @@
   </div>
 
   <!-- Submit button -->
-  <button type="button" class="btn btn-primary btn-block mb-4 text-center col-4 offset-4">Sign in</button>
+  <button type="submit" name="signup" class="btn btn-primary btn-block mb-4 text-center col-4 offset-4">Sign in</button>
 
   <!-- Register buttons -->
   <div class="text-center">
-    <p>Not a member? <a href="#!">Register</a></p>
-    
-    <p>or sign up with:</p>
+    <p>sign up with:</p>
     <button type="button" class="btn btn-link btn-floating mx-1">
       <i class="fab fa-facebook-f"></i>
     </button>
