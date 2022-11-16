@@ -10,23 +10,31 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
    
-    <title>Document</title>
+    <title>SignUp</title>
 </head>
 <body>
-  <h1>Log In</h1>
+  <h1>Create An Account</h1>
 <form class="w-25 m-auto py-5">
   <!-- Email input -->
   <div class="form-outline mb-4">
-    <input type="email" id="form2Example1" class="form-control" />
-    <label class="form-label" for="form2Example1">Email address</label>
+    <input type="text" id="form2Example1" class="form-control" />
+    <label class="form-label" for="form2Example1">Username</label>
+  </div>
+  <div class="form-outline mb-4">
+    <input type="email" id="form2Example2" class="form-control" />
+    <label class="form-label" for="form2Example2">Email address</label>
   </div>
 
   <!-- Password input -->
   <div class="form-outline mb-4">
-    <input type="password" id="form2Example2" class="form-control" />
-    <label class="form-label" for="form2Example2">Password</label>
+    <input type="password" id="form2Example3" class="form-control" />
+    <label class="form-label" for="form2Example3">Password</label>
   </div>
-
+  <div class="form-outline mb-4">
+    <input type="password" id="form2Example4" class="form-control" />
+    <label class="form-label" for="form2Example4">Confirm Password</label>
+  </div>
+  
   <!-- 2 column grid layout for inline styling -->
   <div class="row mb-4">
     <div class="col d-flex justify-content-center">
@@ -49,7 +57,8 @@
   <!-- Register buttons -->
   <div class="text-center">
     <p>Not a member? <a href="#!">Register</a></p>
-    <p>or sign up with:</p>
+    
+    <!-- <p>or sign up with:</p>
     <button type="button" class="btn btn-link btn-floating mx-1">
       <i class="fab fa-facebook-f"></i>
     </button>
@@ -64,7 +73,7 @@
 
     <button type="button" class="btn btn-link btn-floating mx-1">
       <i class="fab fa-github"></i>
-    </button>
+    </button> -->
   </div>
 </form>
 </body>
