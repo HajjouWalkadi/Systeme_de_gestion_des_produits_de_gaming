@@ -24,13 +24,6 @@ include '../functions/script.php';
 <form class="col-lg-4 col-md-5 col-11 m-auto p-2 px-4 signupform" action="../functions/script.php" method="post">
   <!-- Email input -->
   <h1 class="text-center mt-2">Create An Account</h1>
-<?php if(isset($_SESSION['existingEmail'])){?>
-  <div class="alert alert-warning" role="alert">
-  <?php echo $_SESSION['existingEmail'];
-  unset($_SESSION['existingEmail']);
-  ?>
-</div>
-<?php }?>
 
   <div class="form-outline mb-4">
     <input type="text" id="userName" name="userName" class="form-control" />
@@ -51,16 +44,6 @@ include '../functions/script.php';
     <label class="form-label" for="form2Example4">Confirm Password</label>
   </div>
   
-  <!-- 2 column grid layout for inline styling -->
-  <div class="row mb-4">
-    <div class="col d-flex justify-content-center">
-
-    <div class="col">
-      <!-- Simple link -->
-      <a href="#!">Forgot password?</a>
-    </div>
-  </div>
-
   <!-- Submit button -->
   <button type="submit" name="signup" class="btn btn-primary btn-block mb-4 text-center col-4 offset-4">Sign in</button>
 

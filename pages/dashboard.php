@@ -8,8 +8,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Dashboard</title>
-</head>
+<?php session_start(); ?>
+  </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid d-flex justify-content-beween row">
@@ -38,7 +40,7 @@
           <a class="nav-link" href="#">Gategories</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Profile</a>
+          <a class="nav-link" href="#"><?= $_SESSION['username'] ?></a>
         </li>
         
       </ul>
@@ -47,10 +49,10 @@
 </nav>
 <div class="container-fluid">
     <div class="row flex-nowrap">
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2  px-0 bg-dark">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                 <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <span class="fs-5 d-none d-sm-inline">Menu</span>
+                    <span class="fs-5 d-none d-sm-inline"></span>
                 </a>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
@@ -61,31 +63,13 @@
                     <li>
                         <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
-                        <!-- <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-                            <li class="w-100">
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1 </a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2 </a>
-                            </li>
-                        </ul> -->
+                       
                     </li>
                     <li>
                         <a href="#" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
                     </li>
-                    <!-- <li>
-                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Bootstrap</span></a>
-                        <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
-                            <li class="w-100">
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2</a>
-                            </li>
-                        </ul>
-                    </li> -->
+                  
                     <li>
                         <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Categories</span> </a>
@@ -104,37 +88,86 @@
                             </li>
                         </ul>
                     </li>
-                    <!-- <li>
-                        <a href="#" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
-                    </li> -->
+                   
                 </ul>
-                <!-- <hr> -->
-                <!-- <div class="dropdown pb-4">
-                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
-                        <span class="d-none d-sm-inline mx-1">loser</span>
-                    </a>
-                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                        <li><a class="dropdown-item" href="#">New project...</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
-                    </ul> -->
-                <!-- </div> --> 
+               
+             
             </div>
         </div>
-        <div class="col py-3">
+        <!-- Game MODAL -->
+
+
+	<div class="modal fade" id="modal-game">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form method="POST" id="form-game">
+					<div class="modal-header">
+						<h5 class="modal-title">Add Product</h5>
+						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
+					</div>
+					<div class="modal-body">
+							<!-- This Input Allows Storing Task Index  -->
+							<input type="hidden" id="product-id" name="productId">
+							<div class="mb-3">
+								<label class="form-label">Image</label>
+								<input type="file" class="form-control" name="productImage" id="product-image" required/>
+							</div>
+
+              <div class="mb-3">
+								<label class="form-label">Title</label>
+								<input type="text" class="form-control" name="productTitle" id="product-title" required/>
+							</div>
+
+							<div class="mb-3">
+								<label class="form-label">Quantity</label>
+								<input type="text" class="form-control" name="productQuantity" id="product-quantity" required/>
+							</div>
+							
+                <div class="mb-3">
+                  <label class="form-label">Category</label>
+                  <select class="form-select" name= "productCategory" id="product-category" required>
+                    <option value="" selected disabled>Please select</option>
+                    <option value="1">Laptop</option>
+                    <option value="2">Keyboard</option>
+                    <option value="3">Mouse</option>
+									<option value="4">Games</option>
+									<option value="5">Headphones</option>
+								</select>
+							</div>
+              
+							
+              <div class="mb-3">
+								<label class="form-label">Price</label>
+								<input type="text" class="form-control" name="productQuantity" id="product-quantity" required/>
+							</div>
+						
+					</div>
+					<div class="modal-footer">
+						<a href="#" class="btn btn-white" data-bs-dismiss="modal">Cancel</a>
+						<button type="button" name="delete" class="btn btn-danger task-action-btn" id="task-delete-btn2">Delete</button>
+						<button type="submit" name="delete" id="task-delete-btn" hidden></button> 
+						<button type="submit" name="update" class="btn btn-warning task-action-btn" id="task-update-btn">Update</button>
+						<button type="submit" name="saveTask" class="btn btn-primary task-action-btn" id="task-save-btn">Save</button>
+					</div> 
+					<!-- name="delete"  onclick="ddelete();" -->
+				</form>
+			</div>
+		</div>
+	</div>
+
+      <div class="col py-3 border border-2">
+        <button type="button" class="btn btn-dark float-right fw-bold p-2" data-bs-toggle="modal" data-bs-target="#modal-game" style="float:right;">
+            Add Product
+          </button>
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">ID</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
+              <th scope="col">Image</th>
+              <th scope="col">Title</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Price</th>
+              <th scope="col">Edit</th>
+              <th scope="col">Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -143,23 +176,16 @@
               <td>Mark</td>
               <td>Otto</td>
               <td>@mdo</td>
+              <td><i class=" fa-solid fa-edit"></i></td>
+              <td><i class=" fa-solid fa-trash"></td>
+             
             </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
+            
+            
           </tbody>
         </table>
-    </div>
-
-    </div>
-    </div>
+      
+       
+    </div>    
 </body>
 </html>
