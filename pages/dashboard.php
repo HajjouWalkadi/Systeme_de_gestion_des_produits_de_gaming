@@ -1,5 +1,7 @@
 <?php
 include '../functions/Create.php';
+include '../functions/Read.php';
+
 //echo $_SESSION['id'];
 
 ?>
@@ -167,8 +169,10 @@ include '../functions/Create.php';
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">Image</th>
+              <!-- <th scope="col">Image</th> -->
+              <th scope="col">id</th>
               <th scope="col">Title</th>
+              <th scope="col">Category</th>
               <th scope="col">Quantity</th>
               <th scope="col">Price</th>
               <th scope="col">Edit</th>
@@ -176,15 +180,9 @@ include '../functions/Create.php';
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td><i class=" fa-solid fa-edit"></i></td>
-              <td><i class=" fa-solid fa-trash"></td>
-             
-            </tr>
+            <?php 
+            getProduct();
+            ?>
             
             
           </tbody>
