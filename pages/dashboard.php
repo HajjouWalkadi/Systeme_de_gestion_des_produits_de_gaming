@@ -1,3 +1,8 @@
+<?php
+include '../functions/Create.php';
+//echo $_SESSION['id'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Dashboard</title>
-<?php session_start(); ?>
+
   </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -100,7 +105,7 @@
 	<div class="modal fade" id="modal-game">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form method="POST" id="form-game">
+				<form action="" method="POST" id="form-game">
 					<div class="modal-header">
 						<h5 class="modal-title">Add Product</h5>
 						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
@@ -108,22 +113,17 @@
 					<div class="modal-body">
 							<!-- This Input Allows Storing Task Index  -->
 							<input type="hidden" id="product-id" name="productId">
-							<div class="mb-3">
+							<!-- <div class="mb-3">
 								<label class="form-label">Image</label>
 								<input type="file" class="form-control" name="productImage" id="product-image" required/>
-							</div>
+							</div> -->
 
               <div class="mb-3">
 								<label class="form-label">Title</label>
 								<input type="text" class="form-control" name="productTitle" id="product-title" required/>
 							</div>
 
-							<div class="mb-3">
-								<label class="form-label">Quantity</label>
-								<input type="text" class="form-control" name="productQuantity" id="product-quantity" required/>
-							</div>
-							
-                <div class="mb-3">
+              <div class="mb-3">
                   <label class="form-label">Category</label>
                   <select class="form-select" name= "productCategory" id="product-category" required>
                     <option value="" selected disabled>Please select</option>
@@ -134,20 +134,25 @@
 									<option value="5">Headphones</option>
 								</select>
 							</div>
-              
+
+							<div class="mb-3">
+								<label class="form-label">Quantity</label>
+								<input type="text" class="form-control" name="productQuantity" id="product-quantity" required/>
+							</div>
+							
 							
               <div class="mb-3">
 								<label class="form-label">Price</label>
-								<input type="text" class="form-control" name="productQuantity" id="product-quantity" required/>
+								<input type="text" class="form-control" name="productPrice" id="product-quantity" required/>
 							</div>
 						
 					</div>
 					<div class="modal-footer">
 						<a href="#" class="btn btn-white" data-bs-dismiss="modal">Cancel</a>
-						<button type="button" name="delete" class="btn btn-danger task-action-btn" id="task-delete-btn2">Delete</button>
+						<!-- <button type="button" name="delete" class="btn btn-danger task-action-btn" id="task-delete-btn2">Delete</button>
 						<button type="submit" name="delete" id="task-delete-btn" hidden></button> 
-						<button type="submit" name="update" class="btn btn-warning task-action-btn" id="task-update-btn">Update</button>
-						<button type="submit" name="saveTask" class="btn btn-primary task-action-btn" id="task-save-btn">Save</button>
+						<button type="submit" name="update" class="btn btn-warning task-action-btn" id="task-update-btn">Update</button> -->
+						<button type="submit" name="saveProduct" class="btn btn-primary task-action-btn" id="product-save-btn">Save</button>
 					</div> 
 					<!-- name="delete"  onclick="ddelete();" -->
 				</form>
