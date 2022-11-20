@@ -1,10 +1,13 @@
 <?php
+// include '../pages/navbar.php';
 include '../functions/Create.php';
 include '../functions/Read.php';
+
 
 //echo $_SESSION['id'];
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,12 +27,16 @@ include '../functions/Read.php';
   <div class="container-fluid d-flex justify-content-beween row">
     <div class="col-10">
 
-      <a class="navbar-brand " href="#">Origin Gamer</a>
+      <a class="navbar-brand"  href="#">Origin Gamer</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-    </div>
-    <!-- <nav class="navbar navbar-light bg-light">
+    </div> 
+
+
+
+
+     <!-- <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
     <form class="d-flex">
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -72,28 +79,10 @@ include '../functions/Read.php';
                             <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
                        
                     </li>
+                   
                     <li>
-                        <a href="#" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
-                    </li>
-                  
-                    <li>
-                        <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Categories</span> </a>
-                            <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
-                            <li class="w-100">
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 1</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product2</span> 2</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product3</span> 3</a>
-                            </li>
-                            <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product4</span> 4</a>
-                            </li>
-                        </ul>
+                        <a href="logout.php" class="nav-link px-0 align-middle">
+                           <span class="ms-1 d-none d-sm-inline">Logout</span></a>
                     </li>
                    
                 </ul>

@@ -7,26 +7,24 @@
     //ROUTING
     if(isset($_POST['saveProduct'])){
         // $image = $_POST['productImage'];
-        // $adminID=$_SESSION['id'];
-        $adminID=3;
         $title = $_POST['productTitle'];
         $category = $_POST['productCategory'];
         $quantity = $_POST['productQuantity'];
         $price = $_POST['productPrice'];
    
-        saveProductFn($title, $adminID, intval($category), $quantity, $price);
+        saveProductFn($title, intval($category), $quantity, $price);
     }
 
 
-    function saveProductFn($title, $adminID, $category, $quantity, $price)
+    function saveProductFn($title, $category, $quantity, $price)
     {        
         //CODE HERE
         //SQL INSERT
         global $conn;
-        $sql = "INSERT INTO product (title, category,admin, quantity, price) VALUES ('$title','$category','$adminID','$quantity','$price')";
+        $sql = "INSERT INTO product (title, category, quantity, price) VALUES ('$title','$category','$quantity','$price')";
         mysqli_query($conn,$sql);
 
         // $_SESSION['message'] = "Product has been added successfully !";
-        header('location:.././pages/dashboard.php');
+        // header('location:.././pages/dashboard.php');
 		
     }
