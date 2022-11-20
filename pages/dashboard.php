@@ -48,10 +48,10 @@ include '../functions/Read.php';
     <div class="collapse navbar-collapse col-2 " id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Gategories</a>
+          <a class="nav-link" href="#">Products</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#"><?= $_SESSION['username'] ?></a>
@@ -71,18 +71,18 @@ include '../functions/Read.php';
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
                         <a href="#" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline text-white">Home</span>
                         </a>
                     </li>
                     <li>
                         <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
+                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline text-white">Dashboard</span> </a>
                        
                     </li>
                    
                     <li>
                         <a href="logout.php" class="nav-link px-0 align-middle">
-                           <span class="ms-1 d-none d-sm-inline">Logout</span></a>
+                           <span class="ms-1 d-none d-sm-inline text-white">Logout</span></a>
                     </li>
                    
                 </ul>

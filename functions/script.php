@@ -44,7 +44,8 @@ function login(){
        $_SESSION['email'] = $email;
        $_SESSION['username'] = $data['username'];
        header('location: ../pages/dashboard.php'); 
-    }else {
+    }
+    else {
         $_SESSION['loginErrorMessage'] = "username or passsword invalid";
         header('location: ../pages/login.php'); 
     }
