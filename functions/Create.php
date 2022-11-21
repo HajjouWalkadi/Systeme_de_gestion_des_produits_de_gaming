@@ -25,10 +25,8 @@
         $sql = "INSERT INTO product (title, category, quantity, price,image) VALUES ('$title','$category','$quantity','$price','$image')";
         mysqli_query($conn,$sql);
         header('location: ../pages/dashboard.php');
-
         // $_SESSION['message'] = "Product has been added successfully !";
         // header('location:.././pages/dashboard.php');
-		
     }
 
 
@@ -44,8 +42,7 @@
         $error = $_FILES['my_image']['error'];
 
             if ($error === 0)
-            {
-                
+            {   
                 if ($img_size > 170000) 
                 {
                     $_SESSION['Error'] = "Sorry, your file is too large.";
@@ -67,7 +64,6 @@
                         else {
                             $_SESSION['Error'] = "You can't upload files of this type";
                             header('location: ../pages/dashboard.php');
-
                         }
                 }
                 }

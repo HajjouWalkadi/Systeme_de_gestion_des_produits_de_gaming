@@ -2,6 +2,7 @@
 // include '../pages/navbar.php';
 include '../functions/Create.php';
 include '../functions/Read.php';
+include '../functions/script.php';
 
 
 //echo $_SESSION['id'];
@@ -160,7 +161,7 @@ include '../functions/Read.php';
         <table class="table">
           <thead>
             <tr>
-             <th scope="col">#</th> 
+             <th scope="col">#<?php echo statisticsCount(); ?></th> 
               <th scope="col">Image</th>
               <th scope="col">Title</th>
               <th scope="col">Category</th>

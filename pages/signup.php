@@ -1,5 +1,5 @@
 <?php 
-// session_start();
+session_start();
 include '../functions/script.php';
 $erreur="";
 $error="";
@@ -13,8 +13,8 @@ if(isset($signup)){
     @$email =filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 
     if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
-      // $_SESSION['emailValide'] = 'this email not valide';
-      $error='this email not valide';
+      // $_SESSION['emailValide'] = 'this email not valid';
+      $error='this email not valid';
 
     }else{
     $sql = "SELECT *  FROM admin WHERE email = '$email' ";
@@ -84,18 +84,13 @@ if(isset($signup)){
   
   <!-- µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ******************* -->
 
-  <div class="form-signup">      
-             
-          <?php if(isset(  $_SESSION['emailValide'])){  ?>
-              <span class="text-danger"><?= $_SESSION['emailValide'] ?></span>
-          <?php } session_destroy(); ?>
-      </div>
+ 
   <!-- µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ******************* -->
 
   
   <!-- Submit button -->
   <button type="submit" name="signup" class="btn btn-primary btn-block mb-4 text-center col-4 offset-4">Sign in</button>
-
+  <p>Already have an account ? <a href="../pages/login.php"> Log in</a></p>
   <!-- Register buttons -->
   <div class="text-center">
     <p>sign up with:</p>

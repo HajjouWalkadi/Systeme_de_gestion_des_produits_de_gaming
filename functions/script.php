@@ -1,5 +1,5 @@
 <?php 
-session_start();
+// session_start();
 
 include 'database.php';
 
@@ -36,3 +36,14 @@ function login(){
         header('location: ../pages/login.php'); 
     }
 }
+
+
+function statisticsCount(){
+    require 'database.php';
+    $countAll = "SELECT * FROM product";
+
+    $query = mysqli_query($conn, $countAll);
+    $counter = mysqli_num_rows($query);
+
+    return $counter;
+ }

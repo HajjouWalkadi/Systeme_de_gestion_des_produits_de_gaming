@@ -52,7 +52,10 @@ $price=$row['price'];
 								<label class="form-label">Image</label>
 								<input type="file" class="form-control" name="productImage" id="product-image" required/>
 							</div> -->
-
+							<div class="mb-3">
+								<label class="form-label">Image</label>
+								<input type="file" class="form-control" name="my_image" id="product-image" required/>
+							</div>
               <div class="mb-3">
 								<label class="form-label">Title</label>
 								<input type="text" class="form-control" value="<?php echo $title?>" name="productTitle" id="product-title" required/>
