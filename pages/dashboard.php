@@ -98,7 +98,7 @@ include '../functions/Read.php';
 	<div class="modal fade" id="modal-game">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form action="" method="POST" id="form-game">
+				<form action="../functions/Create.php" method="POST" id="form-game" enctype="multipart/form-data">
 					<div class="modal-header">
 						<h5 class="modal-title">Add Product</h5>
 						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
@@ -106,10 +106,10 @@ include '../functions/Read.php';
 					<div class="modal-body">
 							<!-- This Input Allows Storing Task Index  -->
 							<input type="hidden" id="product-id" name="productId">
-							<!-- <div class="mb-3">
+							<div class="mb-3">
 								<label class="form-label">Image</label>
-								<input type="file" class="form-control" name="productImage" id="product-image" required/>
-							</div> -->
+								<input type="file" class="form-control" name="my_image" id="product-image" required/>
+							</div>
 
               <div class="mb-3">
 								<label class="form-label">Title</label>
@@ -160,7 +160,7 @@ include '../functions/Read.php';
         <table class="table">
           <thead>
             <tr>
-              <!-- <th scope="col">Image</th> -->
+             <th scope="col">#</th> 
               <th scope="col">Image</th>
               <th scope="col">Title</th>
               <th scope="col">Category</th>

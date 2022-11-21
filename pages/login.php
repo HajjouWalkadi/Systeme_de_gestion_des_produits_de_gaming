@@ -41,7 +41,7 @@
       </div>
       <div class="form-group">
           <?php if(isset($_SESSION['loginErrorMessage'])){  ?>
-              <span class="text-danger"><?=$_SESSION['createdAccount'] ?></span>
+              <span class="text-danger"><?$_SESSION['createdAccount'] ?></span>
           <?php } session_destroy(); ?>
       </div>
       <!-- Submit button -->

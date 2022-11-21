@@ -25,7 +25,7 @@ if(isset($signup)){
       $result = mysqli_query($conn,$sql);
           header('location: ../pages/login.php'); 
   }else{
-      $erreur="email exist deja";
+      $erreur="This email already exist";
   } 
 }
 // header('location: signup.php');   
