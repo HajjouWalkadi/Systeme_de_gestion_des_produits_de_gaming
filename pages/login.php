@@ -1,5 +1,6 @@
 <?php 
   //  include '../functions/script.php';
+  session_start();
 ?>
 
 <!DOCTYPE html>
@@ -39,18 +40,17 @@
         <label class="form-label" for="formPassword">Password</label>
       </div>
       <div class="form-group">
-          <?php if(isset($_SESSION['loginErrorMessage'])) : ?>
-              <span class="text-danger"><?= $_SESSION['loginErrorMessage'] ?></span>
-          <?php endif; ?>
+          <?php if(isset($_SESSION['loginErrorMessage'])){  ?>
+              <span class="text-danger"><?=$_SESSION['createdAccount'] ?></span>
+          <?php } session_destroy(); ?>
       </div>
       <!-- Submit button -->
-      <button type="submit" name="signin" class="btn btn-primary btn-block mb-4 text-center col-4 offset-4">Log in</button>
-      <!-- <button type="submit" name="signin" class="btn btn-primary btn-block mb-4 text-center col-4 offset-4">Sign up</button> -->
+      <button type="submit" name="login" class="btn btn-primary btn-block mb-4 text-center col-4 offset-4">Log in</button>
 
 
       <!-- Register buttons -->
       <div class="text-center">
-        <p>log in with:</p>
+        <p>Not a member ? <a href="../pages/signup.php"> Sign Up</a></p>
         <button type="button" class="btn btn-link btn-floating mx-1">
           <i class="fab fa-facebook-f"></i>
         </button>
@@ -68,5 +68,6 @@
         </button>
       </div>
     </form>
+<script src="../assets/js/main.js"></script>
 </body>
 </html>

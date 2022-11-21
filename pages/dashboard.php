@@ -19,6 +19,8 @@ include '../functions/Read.php';
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	  <link rel="stylesheet" href="../assets/css/style.css">
+
     <title>Dashboard</title>
 
   </head>
@@ -27,7 +29,7 @@ include '../functions/Read.php';
   <div class="container-fluid d-flex justify-content-beween row">
     <div class="col-10">
 
-      <a class="navbar-brand"  href="#">Origin Gamer</a>
+      <a class="navbar-brand"  href="#" class="origingamer">Origin Gamer</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -50,9 +52,9 @@ include '../functions/Read.php';
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
         </li>
-        <li class="nav-item">
+         <li class="nav-item">
           <a class="nav-link" href="#">Products</a>
-        </li>
+        </li> 
         <li class="nav-item">
           <a class="nav-link" href="#"><?= $_SESSION['username'] ?></a>
         </li>
@@ -71,7 +73,7 @@ include '../functions/Read.php';
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
                         <a href="#" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline text-white">Home</span>
+                            <i class="fs-4 bi-house"></i> <span class="origingamer ms-1 d-none d-sm-inline text-white">Home</span>
                         </a>
                     </li>
                     <li>
@@ -159,7 +161,7 @@ include '../functions/Read.php';
           <thead>
             <tr>
               <!-- <th scope="col">Image</th> -->
-              <th scope="col">id</th>
+              <th scope="col">Image</th>
               <th scope="col">Title</th>
               <th scope="col">Category</th>
               <th scope="col">Quantity</th>

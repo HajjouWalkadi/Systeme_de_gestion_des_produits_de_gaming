@@ -1,39 +1,25 @@
 <?php 
-include 'database.php';
 session_start();
 
-if(isset($_POST['signup'])) signUp();
-if(isset($_POST['signin'])) login();
+include 'database.php';
+
+// if(isset($_POST['signup'])) signUp();
+if(isset($_POST['login'])) login();
 
 
-function signUp(){
-    global $conn;
+// function signUp(){
+//     global $conn;
 
-    $username = $_POST['userName'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $sql = "SELECT *  FROM admin WHERE email = '$email' ";
-    $result = mysqli_query($conn,$sql);
-    $countAccount = mysqli_num_rows($result);
-    if($countAccount == 0){
-        $sql ="INSERT INTO admin (`username`, `email`, `password`) VALUES ('$username','$email','$password')";
-        $result = mysqli_query($conn,$sql);
-        if($result) { 
-            $_SESSION['createdAccount'] = 'your account has been created successfully';
-            header('location: ../pages/login.php'); 
-        }
-    }else{
-        $_SESSION['existingEmail']='this email already exist';
-        header('location: ../pages/signup.php');
-    }     
-}
+    
+   
+// }
 
 
 function login(){
     global $conn;
 
      $email = $_POST["email"];
-     $password = $_POST["password"];
+     $password = md5($_POST["password"]);
 
     $sql = "SELECT username FROM admin WHERE email = '$email' AND password = '$password' ";
     $result = mysqli_query($conn,$sql);

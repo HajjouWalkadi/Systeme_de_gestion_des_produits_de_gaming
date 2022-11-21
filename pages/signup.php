@@ -1,5 +1,36 @@
 <?php 
+// session_start();
 include '../functions/script.php';
+$erreur="";
+$error="";
+@$signup=$_POST["signup"];
+if(isset($signup)){
+
+    @$username = $_POST['userName'];
+    
+    @$password = md5($_POST['password']);
+    // @$email = $_POST['email'];
+    @$email =filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+
+    if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+      // $_SESSION['emailValide'] = 'this email not valide';
+      $error='this email not valide';
+
+    }else{
+    $sql = "SELECT *  FROM admin WHERE email = '$email' ";
+    $result = mysqli_query($conn,$sql);
+    $countAccount = mysqli_num_rows($result);
+    if($countAccount == 0){
+      $sql ="INSERT INTO admin (`username`, `email`, `password`) VALUES ('$username','$email','$password')";
+      $result = mysqli_query($conn,$sql);
+          header('location: ../pages/login.php'); 
+  }else{
+      $erreur="email exist deja";
+  } 
+}
+// header('location: signup.php');   
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -24,9 +55,13 @@ include '../functions/script.php';
 </head>
 <body class="bgimage row m-0">
   
-<form class="col-lg-4 col-md-5 col-11 m-auto p-2 px-4 signupform" action="../functions/script.php" method="post" data-parsley-validate>
+<form class=" col-lg-4 col-md-5 col-11 m-auto p-2 px-4 signupform" action="signup.php" method="post" data-parsley-validate>
   <!-- Email input -->
+  <div class="text-center">
+  <p class="text-danger"><?= $erreur; ?></p>
+  </div>
   <h1 class="text-center mt-2">Create An Account</h1>
+  <!-- ********************************************************** -->
 
   <div class="form-outline mb-4">
     <input type="text" id="userName" name="userName" class="form-control" placeholder="Enter username" required />
@@ -46,6 +81,17 @@ include '../functions/script.php';
     <input type="password" id="passwordCheck" name="passwordCheck" class="form-control" placeholder="Confirm Password" data-parsley-equalto="#password" data-parsley-trigger="keyup" required />
     <label class="form-label" for="form2Example4">Confirm Password</label>
   </div>
+  
+  <!-- µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ******************* -->
+
+  <div class="form-signup">      
+             
+          <?php if(isset(  $_SESSION['emailValide'])){  ?>
+              <span class="text-danger"><?= $_SESSION['emailValide'] ?></span>
+          <?php } session_destroy(); ?>
+      </div>
+  <!-- µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ******************* -->
+
   
   <!-- Submit button -->
   <button type="submit" name="signup" class="btn btn-primary btn-block mb-4 text-center col-4 offset-4">Sign in</button>
@@ -70,5 +116,7 @@ include '../functions/script.php';
     </button>
   </div>
 </form>
+<script src="../assets/js/main.js"></script>
+
 </body>
 </html>
