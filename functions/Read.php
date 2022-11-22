@@ -1,9 +1,7 @@
 <?php
     //INCLUDE DATABASE FILE
     include '../functions/database.php';
-
-
-
+    
 //____________**fonction afficher:**__________________________________________________________________________________
 // _______________________________________________________________________________________________________________
     
@@ -15,11 +13,8 @@
 
         $result=mysqli_query($conn,$sql);
         return $result;
-        //$data = mysqli_fetch_assoc($result)   ;
-        }
-        
-
-        
+        //$data = mysqli_fetch_assoc($result);
+        }        
         function selectCategory(){
           global $conn;
           $sql = "SELECT * FROM categorie";

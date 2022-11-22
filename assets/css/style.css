@@ -3,7 +3,6 @@
     margin: auto;
 }
 
-
 .bgimage{
 
     background:url(../img/background/backgroundimg.jpg) no-repeat;
@@ -26,7 +25,3 @@ button{
     width: 40px;
 }
 
-
-.cards{
-    background-color: red;
-}

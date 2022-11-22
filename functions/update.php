@@ -19,6 +19,7 @@
             header('location: ../pages/dashboard.php');
         }
      }
+     
      // FUNCTION ADD IMAGE 
     function uploadimage(){
         if(isset($_FILES['my_image'])){

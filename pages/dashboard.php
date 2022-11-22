@@ -4,8 +4,6 @@ include '../functions/Create.php';
 include '../functions/Read.php';
 include '../functions/script.php';
 
-//echo $_SESSION['id'];
-
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +22,7 @@ include '../functions/script.php';
 
   </head>
 <body >
+  <!-- ***************************************::NAVBAR::***************************************************** -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     
@@ -32,15 +31,6 @@ include '../functions/script.php';
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-     
-      <!-- <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-search" type="submit">Search</button>
-          </form>
-        </div>
-      </nav> -->
 
     <div class="collapse navbar-collapse col-2 " id="navbarNav">
       <ul class="navbar-nav">
@@ -62,6 +52,7 @@ include '../functions/script.php';
     </div>
   </div>
 </nav>
+<!-- ***************************************************::Sidebar::******************************************************* -->
 <div class="container-fluid">
     <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2  px-0 bg-dark vh-100">
@@ -70,11 +61,6 @@ include '../functions/script.php';
                     <span class="fs-5 d-none d-sm-inline"></span>
                 </a>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                    <!-- <li class="nav-item">
-                        <a href="#" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-house"></i> <span class="origingamer ms-1 d-none d-sm-inline text-white">Home</span>
-                        </a>
-                    </li> -->
                     <li>
                         <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline text-white">Dashboard</span> </a>
@@ -96,7 +82,7 @@ include '../functions/script.php';
             </div>
         </div>
 
-        <!-- Game MODAL -->
+        <!-- Game Product MODAL -->
 
         <div class="modal fade" id="modal-game">
           <div class="modal-dialog">
@@ -107,7 +93,7 @@ include '../functions/script.php';
                   <a href="#" class="btn-close" data-bs-dismiss="modal"></a>
                 </div>
                 <div class="modal-body">
-                    <!-- This Input Allows Storing Task Index  -->
+                    <!-- This Input Allows Storing Product Index  -->
                     <input type="hidden" id="product-id" name="productId">
                     <div class="mb-3">
                       <label class="form-label">Image</label>
@@ -141,12 +127,8 @@ include '../functions/script.php';
                 </div>
                 <div class="modal-footer">
                   <a href="#" class="btn btn-white" data-bs-dismiss="modal">Cancel</a>
-                  <!-- <button type="button" name="delete" class="btn btn-danger task-action-btn" id="task-delete-btn2">Delete</button>
-                  <button type="submit" name="delete" id="task-delete-btn" hidden></button> 
-                  <button type="submit" name="update" class="btn btn-warning task-action-btn" id="task-update-btn">Update</button> -->
                   <button type="submit" name="saveProduct" class="btn btn-primary task-action-btn" id="product-save-btn">Save</button>
                 </div> 
-                <!-- name="delete"onclick="ddelete();" -->
               </form>
             </div>
           </div>
@@ -190,13 +172,12 @@ include '../functions/script.php';
                   <td><a href="../functions/Edit.php?id<?= $row['id'] ?>"><span onclick="editProduct()" class="btn btn-success text-black"><i class="fas fa-edit"></i></span></a></td>
                   
                   <td>
-                    <a href="#" onclick="if(confirm('Are you sure to delete thi recorde !')){ document.querySelector('#delete-product-<?= $row['id']?>').submit();}"><span class="btn btn-danger text-black"><i class="fas fa-trash"></i></span></a>
-                    <!-- <button onclick="if(confirm('Are you sure to delete thi recorde !')){ document.querySelector('#delete-product-<?= $row['id']?>').submit();}"><span class="btn btn-danger text-black"><i class="fas fa-trash"></i></button> -->
+                    <a href="#" onclick="if(confirm('Are you sure want to delete this record !')){ document.querySelector('#delete-product-<?= $row['id']?>').submit();}"><span class="btn btn-danger text-black"><i class="fas fa-trash"></i></span></a>
                     <form action="../functions/delete.php" method="post" id="delete-product-<?= $row['id']?>">
                       <input type="hidden" name="delete" value="<?= $row['id'] ?>">
                     </form>
                   </td>
-                </tr>
+          </tr>
                 <?php } ?>
             
             

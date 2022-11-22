@@ -61,7 +61,6 @@ if(isset($signup)){
   <p class="text-danger"><?= $erreur; ?></p>
   </div>
   <h1 class="text-center mt-2">Create An Account</h1>
-  <!-- ********************************************************** -->
 
   <div class="form-outline mb-4">
     <input type="text" id="userName" name="userName" class="form-control" placeholder="Enter username" required />
@@ -82,10 +81,6 @@ if(isset($signup)){
     <label class="form-label" for="form2Example4">Confirm Password</label>
   </div>
   
-  <!-- µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ******************* -->
-
- 
-  <!-- µµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµµ******************* -->
 
   
   <!-- Submit button -->

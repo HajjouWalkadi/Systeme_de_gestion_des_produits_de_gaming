@@ -6,7 +6,6 @@
 
     //ROUTING
     if(isset($_POST['saveProduct'])){
-        // $image = $_POST['productImage'];
         $title = $_POST['productTitle'];
         $category = $_POST['productCategory'];
         $quantity = $_POST['productQuantity'];
