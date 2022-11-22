@@ -3,7 +3,7 @@
 
       global $conn;
 
-      $id = $_GET['id'];
+      $id = $_POST['delete'];
       $sql = "DELETE FROM product WHERE id = '$id' ";
       $result = mysqli_query($conn,$sql);
 
