@@ -16,6 +16,7 @@ if(isset($_POST['login'])) login();
 
 
 function login(){
+    session_start();
     global $conn;
 
      $email = $_POST["email"];
@@ -25,6 +26,7 @@ function login(){
     $result = mysqli_query($conn,$sql);
     $countAccount = mysqli_num_rows($result);
     $data = mysqli_fetch_assoc($result);
+    var_dump($data);
     if ($countAccount != 0) {
         // login success ! 
        $_SESSION['email'] = $email;
