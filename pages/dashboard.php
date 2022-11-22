@@ -33,11 +33,7 @@ include '../functions/script.php';
         <span class="navbar-toggler-icon"></span>
       </button>
      
-
-
-
-
-     <!-- <nav class="navbar navbar-light bg-light">
+ <!-- <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
     <form class="d-flex">
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -74,11 +70,11 @@ include '../functions/script.php';
                     <span class="fs-5 d-none d-sm-inline"></span>
                 </a>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a href="#" class="nav-link align-middle px-0">
                             <i class="fs-4 bi-house"></i> <span class="origingamer ms-1 d-none d-sm-inline text-white">Home</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline text-white">Dashboard</span> </a>
@@ -99,8 +95,8 @@ include '../functions/script.php';
              
             </div>
         </div>
-        <!-- Game MODAL -->
 
+        <!-- Game MODAL -->
 
 	<div class="modal fade" id="modal-game">
 		<div class="modal-dialog">
@@ -127,11 +123,7 @@ include '../functions/script.php';
                   <label class="form-label">Category</label>
                   <select class="form-select" name= "productCategory" id="product-category" required>
                     <option value="" selected disabled>Please select</option>
-                    <option value="1">Laptop</option>
-                    <option value="2">Keyboard</option>
-                    <option value="3">Mouse</option>
-									<option value="4">Games</option>
-									<option value="5">Headphones</option>
+                    <?php selectCategory() ?>
 								</select>
 							</div>
 
@@ -154,17 +146,20 @@ include '../functions/script.php';
 						<button type="submit" name="update" class="btn btn-warning task-action-btn" id="task-update-btn">Update</button> -->
 						<button type="submit" name="saveProduct" class="btn btn-primary task-action-btn" id="product-save-btn">Save</button>
 					</div> 
-					<!-- name="delete"  onclick="ddelete();" -->
+					<!-- name="delete"onclick="ddelete();" -->
 				</form>
 			</div>
 		</div>
 	</div>
 
+  <!-- Button Add product -->
+
       <div class="col py-3 border border-2">
         <button type="button" class="btn btn-dark float-right fw-bold p-2" data-bs-toggle="modal" data-bs-target="#modal-game" style="float:right;">
             Add Product
           </button>
-        <table class="table">
+          <!-- Tableau des elements -->
+        <table class="table-striped  table table-hover">
           <thead>
             <tr>
              <th scope="col">#<?php echo statisticsCount(); ?></th> 
@@ -184,9 +179,7 @@ include '../functions/script.php';
             
             
           </tbody>
-        </table>
-      
-       
+        </table>       
     </div>    
 </body>
 </html>

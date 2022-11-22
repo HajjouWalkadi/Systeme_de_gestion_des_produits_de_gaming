@@ -9,9 +9,6 @@ if(isset($_POST['login'])) login();
 
 // function signUp(){
 //     global $conn;
-
-    
-   
 // }
 
 

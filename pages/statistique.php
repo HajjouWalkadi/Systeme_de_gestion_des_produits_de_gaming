@@ -22,12 +22,12 @@ $rowCategory = TotalGategorie();
     <title>Dashboard</title>
 
   </head>
-<body>
+<body >
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     
 
-      <a class="navbar-brand"  href="#" class="origingamer">Origin Gamer</a>
+      <a class="navbar-brand"  href="#" class="origingamer" fw-5>Origin Gamer</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -73,11 +73,11 @@ $rowCategory = TotalGategorie();
                     <span class="fs-5 d-none d-sm-inline"></span>
                 </a>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a href="dashboard.php" class="nav-link align-middle px-0">
                             <i class="fs-4 bi-house"></i> <span class="origingamer ms-1 d-none d-sm-inline text-white">Home</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="dashboard.php" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline text-white">Dashboard</span> </a>
@@ -96,11 +96,11 @@ $rowCategory = TotalGategorie();
                 </ul>
             </div>
         </div>
-        <div class="d-flex row gap-3" style="height: 50%;">
+        <div class="d-flex p-5 row gap-3" style="height: 50%;">
             <div class="card col-6" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Total Product</h5>
-                    <p class="card-text"><?php echo $rowProduct["total"]; ?></p>
+                    <p class="card-text justify-content"><?php echo $rowProduct["total"]; ?></p>
                 </div>
             </div>
             <div class="card col-6" style="width: 18rem;">

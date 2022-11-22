@@ -33,4 +33,16 @@
             ';
           }
         }
+        
+        function selectCategory(){
+          global $conn;
+          $sql = "SELECT * FROM categorie";
+          $result=mysqli_query($conn,$sql);
+          $row=mysqli_fetch_assoc($result);
+          while($row=mysqli_fetch_assoc($result)){
+            echo "<option value='$row[id]'>$row[category_name]</option>";
+          }
+          
+        }
+       
 ?>

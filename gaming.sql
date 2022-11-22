@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 21 nov. 2022 à 16:26
+-- Généré le : mar. 22 nov. 2022 à 17:31
 -- Version du serveur : 10.4.25-MariaDB
 -- Version de PHP : 8.1.10
 
@@ -49,7 +49,11 @@ INSERT INTO `admin` (`id`, `username`, `email`, `password`) VALUES
 (31, 'admin', 'admin@gmail.com', 'admin123'),
 (33, 'admin', 'admin1@gmail.com', '0192023a7bbd73250516f069df18b500'),
 (34, 'jewasahude', 'vecixipix@mailinator.com', 'f3ed11bbdb94fd9ebdefbaf646ab94d3'),
-(36, 'lygujal', 'wazen@mailinator.com', 'f3ed11bbdb94fd9ebdefbaf646ab94d3');
+(36, 'lygujal', 'wazen@mailinator.com', 'f3ed11bbdb94fd9ebdefbaf646ab94d3'),
+(37, 'cozinu', 'kahyke@mailinator.com', '857f9f2a2da8b447f4c3e2ff1e99a624'),
+(38, 'wregtyi', 'maliri@gmail.com', 'e13f9c43d4d498e9a9900468fcfc5444'),
+(39, 'wicowyx', 'rafecon@mailinator.com', '25d55ad283aa400af464c76d713c07ad'),
+(40, 'luxuvo', 'todehi@mailinator.com', '25d55ad283aa400af464c76d713c07ad');
 
 -- --------------------------------------------------------
 
@@ -84,20 +88,22 @@ CREATE TABLE `product` (
   `title` varchar(255) NOT NULL,
   `quantity` int(11) NOT NULL,
   `category` int(11) NOT NULL,
-  `price` int(11) NOT NULL, 
-  `image` varchar(225)
+  `price` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `product`
 --
 
-INSERT INTO `product` (`id`, `title`, `quantity`, `category`, `price`) VALUES
-(61, 'Beatae quis ', 54, 2, 567),
-(62, 'ADD', 33, 3, 401),
-(64, 'JBL', 120, 5, 1250),
-(65, 'Enim doloribus sapie', 658, 2, 862),
-(73, 'Dicta qui volu TT', 133, 1, 851);
+INSERT INTO `product` (`id`, `title`, `quantity`, `category`, `price`, `image`) VALUES
+(105, 'Eligendi alias quos ', 40, 3, 287, 'kfa2-gaming-slider-03-souris.jpg'),
+(110, 'Rerum quis quis quia', 984, 4, 983, 'games4.jpg'),
+(121, 'Cupiditate optio cu', 34, 4, 904, 'IMG-637cd2502df968.42550452.jpg'),
+(123, 'Ea tempora ea anim e', 400, 1, 272, 'IMG-637cde97320c00.61568421.jpg'),
+(124, 'Itaque qui duis alia', 248, 4, 302, 'keyboard2.jpg'),
+(125, 'Deserunt temporibus ', 592, 1, 182, 'IMG-637cdedfb05e24.11557121.jpg'),
+(127, 'Delectus impedit e', 143, 4, 851, 'games3.jpg');
 
 --
 -- Index pour les tables déchargées
@@ -131,7 +137,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT pour la table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT pour la table `categorie`
@@ -143,7 +149,7 @@ ALTER TABLE `categorie`
 -- AUTO_INCREMENT pour la table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
 
 --
 -- Contraintes pour les tables déchargées
