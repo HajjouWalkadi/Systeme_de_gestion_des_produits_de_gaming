@@ -3,6 +3,11 @@
 include '../functions/Create.php';
 include '../functions/Read.php';
 include '../functions/script.php';
+include '../functions/statistiquescript.php';
+
+$rowProduct = TotalProduct();
+$rowCategory = TotalGategorie();
+
 
 ?>
 
@@ -52,7 +57,7 @@ include '../functions/script.php';
     </div>
   </div>
 </nav>
-<!-- ***************************************************::Sidebar::******************************************************* -->
+<!-- ********::Sidebar::******************************************************* -->
 <div class="container-fluid">
     <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2  px-0 bg-dark vh-100">
@@ -140,6 +145,69 @@ include '../functions/script.php';
         <button type="button" class="btn btn-dark float-right fw-bold p-2" data-bs-toggle="modal" data-bs-target="#modal-game" style="float:right;">
             Add Product
           </button>
+
+
+
+          <!-- statistiques -->
+          <div class="d-flex p-5 row gap-3" style="height: 50%;">
+                      <!-- Total Product -->
+            <div class="card col-6 bg-black text-white" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Total Product</h5>
+                    <p class="card-text justify-content"><?php echo $rowProduct["total"]; ?></p>
+                </div>
+            </div>
+            <!--Toatal for each category  -->
+            <div class="card col-6 bg-black text-white" style="width: 18rem;">
+            <div class="card-body">
+                    <h5 class="card-title">Toatal for each category</h5>
+              <?php 
+                global $conn;
+                $sql="SELECT category FROM product";
+                $result=mysqli_query($conn,$sql);
+                $games = 0;
+                $mouses = 0;
+                $laptops = 0;
+                $keyboards = 0;
+                $headphones = 0;
+                while( $product=mysqli_fetch_assoc($result)){
+                  if($product['category'] == 1){ 
+                     $laptops++;
+                    }else if($product['category'] == 2){ 
+                      $keyboards++;
+                    }else if($product['category'] == 3){ 
+                      $mouses++;
+                    }else if($product['category'] == 4){ 
+                      $games++;
+                    }else if($product['category'] == 5){ 
+                      $headphones++;
+                    }   }; ?>
+                <span>laptops : <span><?= $laptops ?></span></span><br>      
+                <span>keyboards : <span><?= $keyboards ?></span></span><br>  
+                <span>mouses : <span><?= $mouses ?></span></span><br>
+                <span>games : <span><?= $games ?></span></span> <br>      
+                <span>headphones : <span><?= $headphones ?></span></span><br>       
+              </div>          
+            </div>
+            <!-- Products out of stock -->
+            <div class="card col-6 bg-black text-white" style="width: 18rem;">
+            <div class="card-body">
+                    <h5 class="card-title">Products out of stock</h5>
+              <?php 
+                global $conn;
+                $sql="SELECT title,quantity FROM product";
+                $result=mysqli_query($conn,$sql);
+                while( $product=mysqli_fetch_assoc($result)){
+                  if($product['quantity'] == 0){  ?>
+                       <span class="card-text">_ <?php echo $product["title"]; ?></span>
+                       <br>
+              <?php } }; ?>
+              </div>          
+            </div>
+        </div>
+
+
+
           <!-- Tableau des elements -->
         <table class="table-striped  table table-hover">
           <thead>

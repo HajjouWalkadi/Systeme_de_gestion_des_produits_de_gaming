@@ -30,13 +30,13 @@
       <h1 class="text-center mt-2">Log In</h1>
 
       <div class="form-outline mb-4">
-        <input type="email" id="email" name="email" class="form-control" placeholder="Enter your address email" data-parsley-type="email" required/>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Enter your address email" data-parsley-type="email" data-parsley-trigger="keyup" required/>
         <label class="form-label" for="formEmail">Email address</label>
       </div>
 
       <!-- Password input -->
       <div class="form-outline mb-4">
-        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required data-parsley-length="[8, 16]" data-parsley-trigger="keyup" required/>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Password" data-parsley-length="[8, 16]" data-parsley-trigger="keyup" required/>
         <label class="form-label" for="formPassword">Password</label>
       </div>
       <div class="form-group">

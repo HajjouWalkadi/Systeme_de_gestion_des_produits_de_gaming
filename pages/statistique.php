@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 include '../functions/statistiquescript.php';
 
@@ -36,14 +36,7 @@ $rowCategory = TotalGategorie();
 
 
 
-     <!-- <nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-    <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-search" type="submit">Search</button>
-    </form>
-  </div>
-</nav> -->
+   
 
     <div class="collapse navbar-collapse col-2 " id="navbarNav">
       <ul class="navbar-nav">
@@ -114,4 +107,4 @@ $rowCategory = TotalGategorie();
         </div>
          
 </body>
-</html>
+</html> -->
