@@ -24,6 +24,18 @@
     <title>Log In</title>
 </head>
 <body class="bgimage row m-0">
+<?php if (isset($_SESSION['loginErrorMessage'])): ?>
+            <div class="d-flex justify-content-center">
+                <div class="alert alert-danger alert-dismissible fade show mt-5 w-25">
+                    <strong>Error : </strong>
+                    <?php   
+                    echo $_SESSION['loginErrorMessage'];
+                    unset($_SESSION['loginErrorMessage']);
+                    ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            </div>
+        <?php endif ?>
       
     <form class="col-lg-4 col-md-5 col-11 m-auto p-2 px-4 loginform" action="../functions/script.php" method="post" data-parsley-validate>
       <!-- Email input -->

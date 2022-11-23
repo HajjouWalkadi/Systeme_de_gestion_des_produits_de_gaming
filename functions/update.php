@@ -10,9 +10,12 @@
         $categorie = $_POST["productCategory"];
         $quantity = $_POST["productQuantity"];
         $price = $_POST["productPrice"];
-        $image = $_POST["my_image"] ;
-   
-        $sql = "UPDATE product SET title = '$title',category = '$categorie',quantity = '$quantity',price = '$price',image = '$image' WHERE id = '$id' ";
+        $image = uploadimage();
+        if($image == ''){
+            $sql = "UPDATE product SET title = '$title',category = '$categorie',quantity = '$quantity',price = '$price' WHERE id = '$id' ";
+        }else{
+            $sql = "UPDATE product SET title = '$title',category = '$categorie',quantity = '$quantity',price = '$price',image = '$image' WHERE id = '$id' ";        }
+        
         $result = mysqli_query($conn,$sql);
         
         if($result){
@@ -21,21 +24,17 @@
      }
      
      // FUNCTION ADD IMAGE 
-    function uploadimage(){
+     function uploadimage(){
         if(isset($_FILES['my_image'])){
        
-           global $conn;
            $img_name = $_FILES['my_image']['name'];
            $img_size = $_FILES['my_image']['size'];
            $tmp_name = $_FILES['my_image']['tmp_name'];
            $error = $_FILES['my_image']['error'];
-           $new_img_name ;
-
    
                if ($error === 0)
-               {
-                   
-                   if ($img_size > 170000) 
+               {   
+                   if ($img_size > 1000000) 
                    {
                        $_SESSION['Error'] = "Sorry, your file is too large.";
                      header('location: ../pages/dashboard.php');
@@ -56,7 +55,6 @@
                            else {
                                $_SESSION['Error'] = "You can't upload files of this type";
                                header('location: ../pages/dashboard.php');
-   
                            }
                    }
                    }
@@ -64,8 +62,9 @@
                {
                    $_SESSION['Error'] = 'unknown error occurred!';
                    header('location: ../pages/dashboard.php');
+   
+                   
                }
        }
        return $new_img_name ;
-
    } 

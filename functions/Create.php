@@ -33,7 +33,6 @@
     // FUNCTION ADD IMAGE 
     function uploadimage(){
      if(isset($_FILES['my_image'])){
-    
         global $conn;
         $img_name = $_FILES['my_image']['name'];
         $img_size = $_FILES['my_image']['size'];
@@ -42,7 +41,7 @@
 
             if ($error === 0)
             {   
-                if ($img_size > 170000) 
+                if ($img_size > 1000000) 
                 {
                     $_SESSION['Error'] = "Sorry, your file is too large.";
                   header('location: ../pages/dashboard.php');

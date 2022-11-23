@@ -68,18 +68,18 @@ $rowCategory = TotalGategorie();
                   <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                   <li class="nav-item">
                           <a href="#" class="nav-link align-middle px-0">
-                              <i class="fas fa-house"></i> <span class="origingamer ms-1 d-none d-sm-inline text-white">Menu</span>
+                              <i class="fas fa-house"></i> <span class="origingamer ms-1 d-none d-md-inline text-white">Menu</span>
                           </a>
                       </li>
                       <li>
                           <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                              <i class="fas fa-dashboard"></i> <span class="ms-1 d-none d-sm-inline text-white">Dashboard</span> </a>
+                              <i class="fas fa-dashboard"></i> <span class="ms-1 d-none d-md-inline text-white">Dashboard</span> </a>
                         
                       </li>                  
                       
                       <li>
                           <a href="logout.php" class="nav-link px-0 align-middle">
-                          <i class="fas fa-lock"></i><span class="ms-1 d-none d-sm-inline text-white">Logout</span></a>
+                          <i class="fas fa-lock"></i><span class="ms-1 d-none d-md-inline text-white">Logout</span></a>
                       </li>
                     
                   </ul>
@@ -93,24 +93,33 @@ $rowCategory = TotalGategorie();
           <!-- Button Add product -->
    
       <div class="col">
-            <button type="button" class="btn btn-dark float-right fw-bold p-2" data-bs-toggle="modal" data-bs-target="#modal-game" style="float:right;">
-              Add Product
-            </button>
+            <div class="d-flex justify-content-lg-end ps-2 mt-3">
+              <button type="button" class="btn btn-dark fw-bold p-2" data-bs-toggle="modal" data-bs-target="#modal-game">
+                Add Product
+              </button>
+            </div>
 
             
             
             <!-- statistiques -->
-            <div class="d-flex p-5 row gap-3" >
+            <div class="container-fluid mt-5">
+              <div class="row gap-3 p-4" >
               <!-- Total Product -->
-              <div class="card col-6 bg-black text-white" style="width: 18rem;">
+              <div class="card col-10 col-md-5 col-lg-3 shadow pt-3 mb-4">
                 <div class="card-body">
+                  <div class="bg-gradient bg-secondary p-3 rounded-3 shadow position-absolute" style="top: -30px;">
+                      <i class="fa-solid fa-gamepad text-white fa-lg"></i>
+                  </div>
                   <h5 class="card-title">Total Product</h5>
                   <p class="card-text justify-content"><?php echo $rowProduct["total"]; ?></p>
                 </div>
               </div>
               <!--Toatal for each category  -->
-              <div class="card col-6 bg-black text-white" style="width: 18rem;">
+              <div class="card col-10 col-md-5 col-lg-3 shadow pt-3  mb-4">
               <div class="card-body">
+              <div class="bg-gradient bg-secondary p-3 rounded-3 shadow position-absolute" style="top: -30px;">
+                      <i class="fa-solid fa-cubes text-white fa-lg"></i>
+                  </div>
                 <h5 class="card-title">Toatal for each category</h5>
                 <?php 
                   global $conn;
@@ -141,8 +150,11 @@ $rowCategory = TotalGategorie();
                 </div>          
               </div>
               <!-- Products out of stock -->
-              <div class="card col-6 bg-black text-white" style="width: 18rem;">
+              <div class="card col-10 col-md-5 col-lg-3 shadow pt-3  mb-4">
                 <div class="card-body">
+                <div class="bg-gradient bg-secondary p-3 rounded-3 shadow position-absolute" style="top: -30px;">
+                      <i class="fa-solid fa-shop text-white fa-lg"></i>
+                  </div>
                   <h5 class="card-title">Products out of stock</h5>
                   <?php 
                   global $conn;
@@ -156,6 +168,7 @@ $rowCategory = TotalGategorie();
                   </div>          
               </div>
             </div>
+            
       
               <!-- Tableau des elements -->
               
@@ -188,10 +201,10 @@ $rowCategory = TotalGategorie();
                       <td><?= $row['category_name'] ?></td>
                       <td><?= $row['quantity'] ?></td>
                       <td><?= $row['price'] ?></td>
-                      <td><a href="../functions/Edit.php?id=<?= $row['id'] ?>"><span onclick="editProduct()" class="btn btn-success text-black"><i class="fas fa-edit"></i></span></a></td>
+                      <td><a href="../functions/Edit.php?id=<?= $row['id'] ?>"><span onclick="editProduct()" class="btn btn-success text-black"><i class="fas fa-edit text-white"></i></span></a></td>
                             
                       <td>
-                        <a href="#" onclick="if(confirm('Are you sure want to delete this record !')){ document.querySelector('#delete-product-<?= $row['id']?>').submit();}"><span class="btn btn-danger text-black"><i class="fas fa-trash"></i></span></a>
+                        <a href="#" onclick="if(confirm('Are you sure want to delete this record !')){ document.querySelector('#delete-product-<?= $row['id']?>').submit();}"><span class="btn btn-danger text-black"><i class="fas fa-trash text-white"></i></span></a>
                               <form action="../functions/delete.php" method="post" id="delete-product-<?= $row['id']?>">
                                 <input type="hidden" name="delete" value="<?= $row['id'] ?>">
                               </form>
@@ -210,6 +223,7 @@ $rowCategory = TotalGategorie();
                         <a href="#" class="btn-close" data-bs-dismiss="modal"></a>
                       </div>
                       <div class="modal-body">
+
                         <!-- This Input Allows Storing Product Index  -->
                         <input type="hidden" id="product-id" name="productId">
                         <div class="mb-3">

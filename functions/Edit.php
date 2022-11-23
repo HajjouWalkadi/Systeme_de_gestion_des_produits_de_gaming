@@ -39,7 +39,7 @@ $price=$row['price'];
         <div class="container"> 
         <div class="col-10 mx-auto p-4 my-5 rounded"> 
     
-				<form action="" method="POST" id="form-game">
+				<form action="" method="POST" id="form-game" enctype="multipart/form-data">
 				<input type="hidden" name="id" value="<?php echo $id?>">
 					<div class="modal-header">
 						<h5 class="modal-title">Edit Product</h5>
@@ -85,7 +85,7 @@ $price=$row['price'];
 						
 					</div>
 					<div class="modal-footer">
-						<a href="#" class="btn btn-white" data-bs-dismiss="modal">Cancel</a>
+						<a href="../pages/dashboard.php" class="btn btn-white" data-bs-dismiss="modal">Cancel</a>
 						<!-- <button type="button" name="delete" class="btn btn-danger task-action-btn" id="task-delete-btn2">Delete</button>
 						<button type="submit" name="delete" id="task-delete-btn" hidden></button> 
 						<button type="submit" name="update" class="btn btn-warning task-action-btn" id="task-update-btn">Update</button> -->
