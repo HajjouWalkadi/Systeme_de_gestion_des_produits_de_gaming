@@ -54,7 +54,7 @@ $price=$row['price'];
 							</div> -->
 							<div class="mb-3">
 								<label class="form-label">Image</label>
-								<input type="file" class="form-control" name="my_image" id="product-image" required/>
+								<input type="file" class="form-control" name="my_image" id="product-image"/>
 							</div>
               <div class="mb-3">
 								<label class="form-label">Title</label>

@@ -97,7 +97,7 @@ include '../functions/script.php';
                     <input type="hidden" id="product-id" name="productId">
                     <div class="mb-3">
                       <label class="form-label">Image</label>
-                      <input type="file" class="form-control" name="my_image" id="product-image" required/>
+                      <input type="file" class="form-control" name="my_image" id="product-image"/>
                     </div>
 
                     <div class="mb-3">
@@ -169,7 +169,7 @@ include '../functions/script.php';
                   <td><?= $row['category_name'] ?></td>
                   <td><?= $row['quantity'] ?></td>
                   <td><?= $row['price'] ?></td>
-                  <td><a href="../functions/Edit.php?id<?= $row['id'] ?>"><span onclick="editProduct()" class="btn btn-success text-black"><i class="fas fa-edit"></i></span></a></td>
+                  <td><a href="../functions/Edit.php?id=<?= $row['id'] ?>"><span onclick="editProduct()" class="btn btn-success text-black"><i class="fas fa-edit"></i></span></a></td>
                   
                   <td>
                     <a href="#" onclick="if(confirm('Are you sure want to delete this record !')){ document.querySelector('#delete-product-<?= $row['id']?>').submit();}"><span class="btn btn-danger text-black"><i class="fas fa-trash"></i></span></a>
@@ -178,9 +178,7 @@ include '../functions/script.php';
                     </form>
                   </td>
           </tr>
-                <?php } ?>
-            
-            
+                <?php } ?> 
           </tbody>
         </table>       
     </div>    
