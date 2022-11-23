@@ -25,3 +25,10 @@ button{
     width: 40px;
 }
 
+.tab1::-webkit-scrollbar
+{
+    display: none;
+}
+
+
+

@@ -26,229 +26,231 @@ $rowCategory = TotalGategorie();
     <title>Dashboard</title>
 
   </head>
-<body >
+<body style="height: 100vh;">
   <!-- ***************************************::NAVBAR::***************************************************** -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      
 
-      <a class="navbar-brand"  href="#" class="origingamer">Origin Gamer</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <a class="navbar-brand"  href="#" class="origingamer">Origin Gamer</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse col-2 " id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link text-dark" href="#">Products</a>
-        </li> 
-        <li class="nav-item">
-          <a class="nav-link text-primary bolder" href="#"><?php
-          if(isset($_SESSION['username'] )){
-            echo $_SESSION['username'] ;
-          }
-          ?></a>
-        </li>
-        
-      </ul>
+      <div class="collapse navbar-collapse col-2 " id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="#">Products</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link text-primary bolder" href="#"><?php
+            if(isset($_SESSION['username'] )){
+              echo $_SESSION['username'] ;
+            }
+            ?></a>
+          </li>
+          
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
-<!-- ********::Sidebar::******************************************************* -->
-<div class="container-fluid">
-    <div class="row flex-nowrap">
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2  px-0 bg-dark vh-100">
-            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white ">
-                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <span class="fs-5 d-none d-sm-inline"></span>
-                </a>
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                    <li>
-                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline text-white">Dashboard</span> </a>
-                       
-                    </li>                  
-                    <li>
-                        <a href="statistique.php" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline text-white">Statistics</span> </a>
-                       
-                    </li>                  
-                    <li>
-                        <a href="logout.php" class="nav-link px-0 align-middle">
-                           <span class="ms-1 d-none d-sm-inline text-white">Logout</span></a>
-                    </li>
-                   
-                </ul>
-               
-             
-            </div>
-        </div>
-
-        <!-- Game Product MODAL -->
-
-        <div class="modal fade" id="modal-game">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <form action="../functions/Create.php" method="POST" id="form-game" enctype="multipart/form-data">
-                <div class="modal-header">
-                  <h5 class="modal-title">Add Product</h5>
-                  <a href="#" class="btn-close" data-bs-dismiss="modal"></a>
-                </div>
-                <div class="modal-body">
-                    <!-- This Input Allows Storing Product Index  -->
-                    <input type="hidden" id="product-id" name="productId">
-                    <div class="mb-3">
-                      <label class="form-label">Image</label>
-                      <input type="file" class="form-control" name="my_image" id="product-image"/>
-                    </div>
-
-                    <div class="mb-3">
-                      <label class="form-label">Title</label>
-                      <input type="text" class="form-control" name="productTitle" id="product-title" required/>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Category</label>
-                        <select class="form-select" name= "productCategory" id="product-category" required>
-                          <option value="" selected disabled>Please select</option>
-                          <?php selectCategory() ?>
-                      </select>
-                    </div>
-
-                    <div class="mb-3">
-                      <label class="form-label">Quantity</label>
-                      <input type="text" class="form-control" name="productQuantity" id="product-quantity" required/>
-                    </div>
+  </nav>
+  <!-- ********::Sidebar::******************************************************* -->
+   <div class="container-fluid ">
+      <div class="row flex-nowrap">
+          <div class="col-auto col-md-3 col-xl-2 px-sm-2  px-0 bg-dark">
+              <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white ">
+                  <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                      <span class="fs-5 d-none d-sm-inline"></span>
+                  </a>
+                  <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                  <li class="nav-item">
+                          <a href="#" class="nav-link align-middle px-0">
+                              <i class="fas fa-house"></i> <span class="origingamer ms-1 d-none d-sm-inline text-white">Menu</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                              <i class="fas fa-dashboard"></i> <span class="ms-1 d-none d-sm-inline text-white">Dashboard</span> </a>
+                        
+                      </li>                  
+                      
+                      <li>
+                          <a href="logout.php" class="nav-link px-0 align-middle">
+                          <i class="fas fa-lock"></i><span class="ms-1 d-none d-sm-inline text-white">Logout</span></a>
+                      </li>
                     
-                    
-                    <div class="mb-3">
-                      <label class="form-label">Price</label>
-                      <input type="text" class="form-control" name="productPrice" id="product-quantity" required/>
-                    </div>
-                  
+                  </ul>
+                
+                
                 </div>
-                <div class="modal-footer">
-                  <a href="#" class="btn btn-white" data-bs-dismiss="modal">Cancel</a>
-                  <button type="submit" name="saveProduct" class="btn btn-primary task-action-btn" id="product-save-btn">Save</button>
-                </div> 
-              </form>
             </div>
-          </div>
-        </div>
 
-  <!-- Button Add product -->
+          <!-- Game Product MODAL -->
+          
+          <!-- Button Add product -->
+   
+      <div class="col">
+            <button type="button" class="btn btn-dark float-right fw-bold p-2" data-bs-toggle="modal" data-bs-target="#modal-game" style="float:right;">
+              Add Product
+            </button>
 
-      <div class="col py-3 table-responsive border-2">
-        <button type="button" class="btn btn-dark float-right fw-bold p-2" data-bs-toggle="modal" data-bs-target="#modal-game" style="float:right;">
-            Add Product
-          </button>
-
-
-
-          <!-- statistiques -->
-          <div class="d-flex p-5 row gap-3" style="height: 50%;">
-                      <!-- Total Product -->
-            <div class="card col-6 bg-black text-white" style="width: 18rem;">
+            
+            
+            <!-- statistiques -->
+            <div class="d-flex p-5 row gap-3" >
+              <!-- Total Product -->
+              <div class="card col-6 bg-black text-white" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">Total Product</h5>
-                    <p class="card-text justify-content"><?php echo $rowProduct["total"]; ?></p>
+                  <h5 class="card-title">Total Product</h5>
+                  <p class="card-text justify-content"><?php echo $rowProduct["total"]; ?></p>
                 </div>
-            </div>
-            <!--Toatal for each category  -->
-            <div class="card col-6 bg-black text-white" style="width: 18rem;">
-            <div class="card-body">
-                    <h5 class="card-title">Toatal for each category</h5>
-              <?php 
-                global $conn;
-                $sql="SELECT category FROM product";
-                $result=mysqli_query($conn,$sql);
-                $games = 0;
-                $mouses = 0;
-                $laptops = 0;
-                $keyboards = 0;
-                $headphones = 0;
-                while( $product=mysqli_fetch_assoc($result)){
-                  if($product['category'] == 1){ 
-                     $laptops++;
+              </div>
+              <!--Toatal for each category  -->
+              <div class="card col-6 bg-black text-white" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">Toatal for each category</h5>
+                <?php 
+                  global $conn;
+                  $sql="SELECT category FROM product";
+                  $result=mysqli_query($conn,$sql);
+                  $games = 0;
+                  $mouses = 0;
+                  $laptops = 0;
+                  $keyboards = 0;
+                  $headphones = 0;
+                  while( $product=mysqli_fetch_assoc($result)){
+                    if($product['category'] == 1){ 
+                      $laptops++;
                     }else if($product['category'] == 2){ 
                       $keyboards++;
-                    }else if($product['category'] == 3){ 
-                      $mouses++;
-                    }else if($product['category'] == 4){ 
-                      $games++;
-                    }else if($product['category'] == 5){ 
-                      $headphones++;
-                    }   }; ?>
-                <span>laptops : <span><?= $laptops ?></span></span><br>      
-                <span>keyboards : <span><?= $keyboards ?></span></span><br>  
-                <span>mouses : <span><?= $mouses ?></span></span><br>
-                <span>games : <span><?= $games ?></span></span> <br>      
-                <span>headphones : <span><?= $headphones ?></span></span><br>       
-              </div>          
+                      }else if($product['category'] == 3){ 
+                        $mouses++;
+                      }else if($product['category'] == 4){ 
+                        $games++;
+                      }else if($product['category'] == 5){ 
+                        $headphones++;
+                      }   }; ?>
+                  <span>laptops : <span><?= $laptops ?></span></span><br>      
+                  <span>keyboards : <span><?= $keyboards ?></span></span><br>  
+                  <span>mouses : <span><?= $mouses ?></span></span><br>
+                  <span>games : <span><?= $games ?></span></span> <br>      
+                  <span>headphones : <span><?= $headphones ?></span></span><br>       
+                </div>          
+              </div>
+              <!-- Products out of stock -->
+              <div class="card col-6 bg-black text-white" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Products out of stock</h5>
+                  <?php 
+                  global $conn;
+                  $sql="SELECT title,quantity FROM product";
+                  $result=mysqli_query($conn,$sql);
+                  while( $product=mysqli_fetch_assoc($result)){
+                    if($product['quantity'] == 0){  ?>
+                        <span class="card-text">_ <?php echo $product["title"]; ?></span>
+                        <br>
+                        <?php } }; ?>
+                  </div>          
+              </div>
             </div>
-            <!-- Products out of stock -->
-            <div class="card col-6 bg-black text-white" style="width: 18rem;">
-            <div class="card-body">
-                    <h5 class="card-title">Products out of stock</h5>
-              <?php 
-                global $conn;
-                $sql="SELECT title,quantity FROM product";
-                $result=mysqli_query($conn,$sql);
-                while( $product=mysqli_fetch_assoc($result)){
-                  if($product['quantity'] == 0){  ?>
-                       <span class="card-text">_ <?php echo $product["title"]; ?></span>
-                       <br>
-              <?php } }; ?>
-              </div>          
+      
+              <!-- Tableau des elements -->
+              
+              <div class="overflow-scroll tab1 w-100" style="height:27rem;">
+              <table class="table-striped  table table-hover">
+                <thead>
+                        <tr>
+                          <th scope="col">#<?php echo statisticsCount(); ?></th> 
+                          <th scope="col">Image</th>
+                          <th scope="col">Title</th>
+                          <th scope="col">Category</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                      <?php 
+                      $result = getProduct();
+                      
+                      $countProduct=0;
+                      while($row=mysqli_fetch_assoc($result)){
+                        $id = $row['id'];
+                        $countProduct++; ?>
+                    <tr>
+                      <th scope="row"><?= $countProduct ?></th>
+                      <td><img src="../assets/upload/<?= $row['image'] ?>" style="width: 90px;"></td>
+                      <td><?= $row['title'] ?></td>
+                      <td><?= $row['category_name'] ?></td>
+                      <td><?= $row['quantity'] ?></td>
+                      <td><?= $row['price'] ?></td>
+                      <td><a href="../functions/Edit.php?id=<?= $row['id'] ?>"><span onclick="editProduct()" class="btn btn-success text-black"><i class="fas fa-edit"></i></span></a></td>
+                            
+                      <td>
+                        <a href="#" onclick="if(confirm('Are you sure want to delete this record !')){ document.querySelector('#delete-product-<?= $row['id']?>').submit();}"><span class="btn btn-danger text-black"><i class="fas fa-trash"></i></span></a>
+                              <form action="../functions/delete.php" method="post" id="delete-product-<?= $row['id']?>">
+                                <input type="hidden" name="delete" value="<?= $row['id'] ?>">
+                              </form>
+                            </td>
+                          </tr>
+                          <?php } ?> 
+                  </tbody>
+              </table>   
             </div>
-        </div>
-
-
-
-          <!-- Tableau des elements -->
-        <table class="table-striped  table table-hover">
-          <thead>
-            <tr>
-             <th scope="col">#<?php echo statisticsCount(); ?></th> 
-              <th scope="col">Image</th>
-              <th scope="col">Title</th>
-              <th scope="col">Category</th>
-              <th scope="col">Quantity</th>
-              <th scope="col">Price</th>
-              <th scope="col">Edit</th>
-              <th scope="col">Delete</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php 
-            $result = getProduct();
-            
-        $countProduct=0;
-        while($row=mysqli_fetch_assoc($result)){
-          $id = $row['id'];
-          $countProduct++; ?>
-          <tr>
-                  <th scope="row"><?= $countProduct ?></th>
-                  <td><img src="../assets/upload/<?= $row['image'] ?>" style="width: 90px;"></td>
-                  <td><?= $row['title'] ?></td>
-                  <td><?= $row['category_name'] ?></td>
-                  <td><?= $row['quantity'] ?></td>
-                  <td><?= $row['price'] ?></td>
-                  <td><a href="../functions/Edit.php?id=<?= $row['id'] ?>"><span onclick="editProduct()" class="btn btn-success text-black"><i class="fas fa-edit"></i></span></a></td>
-                  
-                  <td>
-                    <a href="#" onclick="if(confirm('Are you sure want to delete this record !')){ document.querySelector('#delete-product-<?= $row['id']?>').submit();}"><span class="btn btn-danger text-black"><i class="fas fa-trash"></i></span></a>
-                    <form action="../functions/delete.php" method="post" id="delete-product-<?= $row['id']?>">
-                      <input type="hidden" name="delete" value="<?= $row['id'] ?>">
+              <div class="modal fade" id="modal-game">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <form action="../functions/Create.php" method="POST" id="form-game" enctype="multipart/form-data">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Add Product</h5>
+                        <a href="#" class="btn-close" data-bs-dismiss="modal"></a>
+                      </div>
+                      <div class="modal-body">
+                        <!-- This Input Allows Storing Product Index  -->
+                        <input type="hidden" id="product-id" name="productId">
+                        <div class="mb-3">
+                          <label class="form-label">Image</label>
+                          <input type="file" class="form-control" name="my_image" id="product-image"/>
+                        </div>
+                        
+                        <div class="mb-3">
+                          <label class="form-label">Title</label>
+                          <input type="text" class="form-control" name="productTitle" id="product-title" required/>
+                        </div>
+                        
+                        <div class="mb-3">
+                          <label class="form-label">Category</label>
+                          <select class="form-select" name= "productCategory" id="product-category" required>
+                            <option value="" selected disabled>Please select</option>
+                            <?php selectCategory() ?>
+                          </select>
+                        </div>
+                        
+                          <div class="mb-3">
+                            <label class="form-label">Quantity</label>
+                            <input type="text" class="form-control" name="productQuantity" id="product-quantity" required/>
+                          </div>
+                          
+                          
+                          <div class="mb-3">
+                            <label class="form-label">Price</label>
+                            <input type="text" class="form-control" name="productPrice" id="product-quantity" required/>
+                          </div>
+                        
+                        </div>
+                      <div class="modal-footer">
+                        <a href="#" class="btn btn-white" data-bs-dismiss="modal">Cancel</a>
+                        <button type="submit" name="saveProduct" class="btn btn-primary task-action-btn" id="product-save-btn">Save</button>
+                      </div> 
                     </form>
-                  </td>
-          </tr>
-                <?php } ?> 
-          </tbody>
-        </table>       
-    </div>    
+                  </div>
+                </div>
+              </div>
+              </div>    
+  </div>
 </body>
 </html>
