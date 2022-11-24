@@ -24,11 +24,7 @@
         $sql = "INSERT INTO product (title, category, quantity, price,image) VALUES ('$title','$category','$quantity','$price','$image')";
         mysqli_query($conn,$sql);
         header('location: ../pages/dashboard.php');
-        // $_SESSION['message'] = "Product has been added successfully !";
-        // header('location:.././pages/dashboard.php');
     }
-
-
 
     // FUNCTION ADD IMAGE 
     function uploadimage(){

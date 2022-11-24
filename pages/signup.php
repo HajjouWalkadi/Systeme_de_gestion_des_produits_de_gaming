@@ -3,17 +3,16 @@ session_start();
 include '../functions/script.php';
 $erreur="";
 $error="";
-@$signup=$_POST["signup"];
-if(isset($signup)){
 
-    @$username = $_POST['userName'];
+if(isset($_POST["signup"])){
+
+    $username = $_POST['userName'];
     
-    @$password = md5($_POST['password']);
-    // @$email = $_POST['email'];
-    @$email =filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $password = md5($_POST['password']);
+    
+    $email =filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 
     if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
-      // $_SESSION['emailValide'] = 'this email not valid';
       $error='this email not valid';
 
     }else{
@@ -27,8 +26,7 @@ if(isset($signup)){
   }else{
       $erreur="This email already exist";
   } 
-}
-// header('location: signup.php');   
+}  
 }
 
 ?>

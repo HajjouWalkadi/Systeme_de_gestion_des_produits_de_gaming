@@ -1,5 +1,4 @@
 <?php 
-  //  include '../functions/script.php';
   session_start();
 ?>
 

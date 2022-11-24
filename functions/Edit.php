@@ -4,8 +4,6 @@
     include '../functions/database.php';
     include '../functions/update.php';
 
-
-
 if(isset($_GET['id'])){
 
 $id=$_GET['id'];
@@ -16,8 +14,6 @@ $title=$row['title'];
 $category=$row['category'];
 $quantity=$row['quantity'];
 $price=$row['price'];
- 
-
 
 ?>
 
@@ -48,10 +44,6 @@ $price=$row['price'];
 					<div class="modal-body">
 							<!-- This Input Allows Storing Task Index  -->
 							<input type="hidden" id="product-id" name="productId">
-							<!-- <div class="mb-3">
-								<label class="form-label">Image</label>
-								<input type="file" class="form-control" name="productImage" id="product-image" required/>
-							</div> -->
 							<div class="mb-3">
 								<label class="form-label">Image</label>
 								<input type="file" class="form-control" name="my_image" id="product-image"/>
@@ -86,20 +78,13 @@ $price=$row['price'];
 					</div>
 					<div class="modal-footer">
 						<a href="../pages/dashboard.php" class="btn btn-white" data-bs-dismiss="modal">Cancel</a>
-						<!-- <button type="button" name="delete" class="btn btn-danger task-action-btn" id="task-delete-btn2">Delete</button>
-						<button type="submit" name="delete" id="task-delete-btn" hidden></button> 
-						<button type="submit" name="update" class="btn btn-warning task-action-btn" id="task-update-btn">Update</button> -->
 						<button type="submit" name="updateProduct" class="btn btn-primary task-action-btn" id="product-update-btn">Update</button>
 					</div> 
-					<!-- name="delete"  onclick="ddelete();" -->
+					
 				</form>
                 </div>
                 </div>
 
-      <!-- <div class="col py-3 border border-2">
-        <button type="button" class="btn btn-dark float-right fw-bold p-2" data-bs-toggle="modal" data-bs-target="#modal-game" style="float:right;">
-            Add Product
-          </button> -->
 
           <?php }else header('location:.././pages/dashboard.php');
         ?>

@@ -3,14 +3,7 @@
 
 include 'database.php';
 
-// if(isset($_POST['signup'])) signUp();
 if(isset($_POST['login'])) login();
-
-
-// function signUp(){
-//     global $conn;
-// }
-
 
 function login(){
     session_start();

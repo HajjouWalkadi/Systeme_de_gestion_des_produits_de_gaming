@@ -8,6 +8,9 @@ include '../functions/statistiquescript.php';
 $rowProduct = TotalProduct();
 $rowCategory = TotalGategorie();
 
+if (!isset($_SESSION['username'])) {
+  header('location: login.php'); 
+}
 
 ?>
 
@@ -87,8 +90,6 @@ $rowCategory = TotalGategorie();
                 
                 </div>
             </div>
-
-          <!-- Game Product MODAL -->
           
           <!-- Button Add product -->
    
@@ -180,11 +181,11 @@ $rowCategory = TotalGategorie();
                           <th scope="col">Image</th>
                           <th scope="col">Title</th>
                           <th scope="col">Category</th>
-                    <th scope="col">Quantity</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Edit</th>
-                    <th scope="col">Delete</th>
-                  </tr>
+                          <th scope="col">Quantity</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">Edit</th>
+                          <th scope="col">Delete</th>
+                        </tr>
                 </thead>
                 <tbody>
                       <?php 
@@ -214,6 +215,9 @@ $rowCategory = TotalGategorie();
                   </tbody>
               </table>   
             </div>
+
+            <!-- Game Product MODAL -->
+
               <div class="modal fade" id="modal-game">
                 <div class="modal-dialog">
                   <div class="modal-content">
